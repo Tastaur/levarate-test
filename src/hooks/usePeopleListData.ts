@@ -9,7 +9,9 @@ export const usePeopleListData = () => {
 
     const peopleList = useMemo(() => {
         const regex = new RegExp(search)
-        return peoples?.searchResults.filter(i => regex.test(i.first_name) || regex.test(i.last_name)).map(i => ({
+        return peoples?.searchResults
+            .filter(i => regex.test(i.first_name) || regex.test(i.last_name))
+            .map(i => ({
             ...i,
             countryName: countries[i.country].name,
             age: new Date().getFullYear() - new Date(i.date_of_birth).getFullYear(),
