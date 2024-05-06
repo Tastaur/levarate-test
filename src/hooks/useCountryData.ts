@@ -13,7 +13,7 @@ export const useCountryData = () => {
     const [error, setError] = useState('')
     const [loading, setIsLoading] = useState(false)
     useEffect(() => {
-        new Promise<Country[]>((resolve, ) => {
+        new Promise<Country[]>((resolve) => {
             setIsLoading(true)
             const data = requestCountries()
             resolve(data)
